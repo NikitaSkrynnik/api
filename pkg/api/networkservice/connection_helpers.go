@@ -35,42 +35,6 @@ func (x *Connection) Clone() *Connection {
 	return proto.Clone(x).(*Connection)
 }
 
-// MatchesMonitorScopeSelector - Returns true of the connection matches the selector
-func (x *Connection) MatchesMonitorScopeSelector(selector *MonitorScopeSelector) bool {
-	if x == nil {
-		return false
-	}
-	// Note: Empty selector always matches a non-nil Connection
-	if len(selector.GetPathSegments()) == 0 {
-		return true
-	}
-	// Iterate through the Connection.NetworkServiceManagers array looking for a subarray that matches
-	// the selector.NetworkServiceManagers array, treating "" in the selector.NetworkServiceManagers array
-	// as a wildcard
-	for i := range x.GetPath().GetPathSegments() {
-		// If there aren't enough elements left in the Connection.NetworkServiceManagers array to match
-		// all of the elements in the select.NetworkServiceManager array...clearly we can't match
-		if i+len(selector.GetPathSegments()) > len(x.GetPath().GetPathSegments()) {
-			return false
-		}
-		// Iterate through the selector.NetworkServiceManagers array to see is the subarray starting at
-		// Connection.NetworkServiceManagers[i] matches selector.NetworkServiceManagers
-		for j := range selector.GetPathSegments() {
-			// "" matches as a wildcard... failure to match either as wildcard or exact match means the subarray
-			// starting at Connection.NetworkServiceManagers[i] doesn't match selectors.NetworkServiceManagers
-			if selector.GetPathSegments()[j].GetName() != "" && x.GetPath().GetPathSegments()[i+j].GetName() != selector.GetPathSegments()[j].GetName() {
-				break
-			}
-			// If this is the last element in the selector.NetworkServiceManagers array and we still are matching...
-			// return true
-			if j == len(selector.GetPathSegments())-1 {
-				return true
-			}
-		}
-	}
-	return false
-}
-
 // GetCurrentPathSegment - Get the current path segment of the connection
 func (x *Connection) GetCurrentPathSegment() *PathSegment {
 	if x == nil {
@@ -79,7 +43,7 @@ func (x *Connection) GetCurrentPathSegment() *PathSegment {
 	if len(x.GetPath().GetPathSegments()) == 0 {
 		return nil
 	}
-	if len(x.GetPath().GetPathSegments())-1 < int(x.GetPath().GetIndex()) {
+	if int(x.GetPath().GetIndex()) > len(x.GetPath().GetPathSegments())-1 {
 		return nil
 	}
 	return x.GetPath().GetPathSegments()[x.GetPath().GetIndex()]
@@ -114,15 +78,4 @@ func (x *Connection) GetNextPathSegment() *PathSegment {
 		return nil
 	}
 	return x.GetPath().GetPathSegments()[x.GetPath().GetIndex()+1]
-}
-
-// FilterMapOnManagerScopeSelector - Filters out of map[string]*Connection Connections not matching the selector
-func FilterMapOnManagerScopeSelector(c map[string]*Connection, selector *MonitorScopeSelector) map[string]*Connection {
-	rv := make(map[string]*Connection)
-	for k, v := range c {
-		if v != nil && v.MatchesMonitorScopeSelector(selector) {
-			rv[k] = v
-		}
-	}
-	return rv
 }
