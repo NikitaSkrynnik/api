@@ -21,8 +21,8 @@ package vfio
 import (
 	"strconv"
 
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
-	"github.com/networkservicemesh/api/pkg/api/networkservice/mechanisms/cls"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice/mechanisms/cls"
 )
 
 // Mechanism is a vfio mechanism helper

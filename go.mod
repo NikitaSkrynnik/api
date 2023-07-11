@@ -1,4 +1,4 @@
-module github.com/networkservicemesh/api
+module github.com/NikitaSkrynnik/api
 
 go 1.20
 

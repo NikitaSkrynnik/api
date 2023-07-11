@@ -20,7 +20,7 @@ syntax = "proto3";
 
 package networkservice;
 
-option go_package = "github.com/networkservicemesh/api/pkg/api/networkservice";
+option go_package = "github.com/NikitaSkrynnik/api/pkg/api/networkservice";
 
 import "connection.proto";
 import "google/protobuf/empty.proto";

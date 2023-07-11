@@ -28,7 +28,7 @@ linters-settings:
   golint:
     min-confidence: 0.8
   goimports:
-    local-prefixes: github.com/networkservicemesh/api
+    local-prefixes: github.com/NikitaSkrynnik/api
   gocyclo:
     min-complexity: 15
   maligned:

@@ -18,8 +18,8 @@
 package api
 
 import (
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
-	"github.com/networkservicemesh/api/pkg/api/registry"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/registry"
 )
 
 // ServiceNames - returns grpc ServiceNames implemented by impl

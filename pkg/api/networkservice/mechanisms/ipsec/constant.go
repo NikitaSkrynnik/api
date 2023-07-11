@@ -17,7 +17,7 @@
 package ipsec
 
 import (
-	"github.com/networkservicemesh/api/pkg/api/networkservice/mechanisms/common"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice/mechanisms/common"
 )
 
 const (

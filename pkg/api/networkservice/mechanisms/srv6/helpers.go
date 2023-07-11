@@ -19,7 +19,7 @@ package srv6
 import (
 	"net"
 
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
 )
 
 // Mechanism - a vxlan mechanism utility wrapper

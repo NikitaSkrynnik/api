@@ -19,7 +19,7 @@
 // Package vfio provides a Mechanism for using vfio devices.
 package vfio
 
-import "github.com/networkservicemesh/api/pkg/api/networkservice/mechanisms/common"
+import "github.com/NikitaSkrynnik/api/pkg/api/networkservice/mechanisms/common"
 
 const (
 	// MECHANISM string

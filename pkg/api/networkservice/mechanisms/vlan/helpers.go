@@ -20,7 +20,7 @@ package vlan
 import (
 	"strconv"
 
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
 )
 
 // Mechanism - a vlan mechanism helper

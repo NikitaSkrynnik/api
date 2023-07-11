@@ -20,7 +20,7 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
 )
 
 // Mechanism is an ipsec mechanism helper

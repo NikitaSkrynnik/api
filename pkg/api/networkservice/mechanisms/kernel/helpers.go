@@ -29,8 +29,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/networkservicemesh/api/pkg/api/networkservice"
-	"github.com/networkservicemesh/api/pkg/api/networkservice/mechanisms/cls"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice"
+	"github.com/NikitaSkrynnik/api/pkg/api/networkservice/mechanisms/cls"
 )
 
 // Mechanism is a kernel mechanism helper

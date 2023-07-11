@@ -54,7 +54,7 @@ jobs:
       - name: Update ${{ github.repository }} locally
         working-directory: networkservicemesh/${{ matrix.repository }}
         run: |
-          GOPRIVATE=github.com/networkservicemesh go get -u github.com/${{ github.repository }}@main
+          GOPRIVATE=github.com/NikitaSkrynnik go get -u github.com/${{ github.repository }}@main
           go mod tidy
           git diff
       - name: Push update to the ${{ matrix.repository }}

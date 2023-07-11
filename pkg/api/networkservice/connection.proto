@@ -19,7 +19,7 @@
 syntax = "proto3";
 
 package connection;
-option go_package = "github.com/networkservicemesh/api/pkg/api/networkservice";
+option go_package = "github.com/NikitaSkrynnik/api/pkg/api/networkservice";
 
 import "google/protobuf/timestamp.proto";
 import "connectioncontext.proto";

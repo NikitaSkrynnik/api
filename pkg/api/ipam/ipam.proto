@@ -18,7 +18,7 @@
 syntax = "proto3";
 
 package ipam;
-option go_package = "github.com/networkservicemesh/api/pkg/api/ipam";
+option go_package = "github.com/NikitaSkrynnik/api/pkg/api/ipam";
 
 
 enum Type {

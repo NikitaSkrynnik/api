@@ -67,13 +67,13 @@ jobs:
           fi
 
   restrictNSMDeps:
-    name: Restrict dependencies on github.com/networkservicemesh/*
+    name: Restrict dependencies on github.com/NikitaSkrynnik/*
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Restrict dependencies on github.com/networkservicemesh/*
+      - name: Restrict dependencies on github.com/NikitaSkrynnik/*
         run: |
-          for i in $(grep github.com/networkservicemesh/ go.mod | grep -v '^module' | sed 's;.*\(github.com\/networkservicemesh\/[^ ]*\).*;\1;g');do
+          for i in $(grep github.com/NikitaSkrynnik/ go.mod | grep -v '^module' | sed 's;.*\(github.com\/networkservicemesh\/[^ ]*\).*;\1;g');do
             echo Dependency on "${i}" is forbidden
             exit 1
           done
