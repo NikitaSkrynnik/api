@@ -25,8 +25,8 @@ jobs:
   release-dependent-repositories:
     name: Release dependent repositories
     needs: create-release
-    uses: networkservicemesh/.github/.github/workflows/release-dependent-repositories.yaml@main
+    uses: NikitaSkrynnik/.github/.github/workflows/release-dependent-repositories.yaml@get-tag
     with:
-      dependent_repositories: ["sdkk"]
+      dependent_repositories: ["sdk"]
     secrets:
       token: ${{ secrets.NSM_BOT_GITHUB_TOKEN }}
